@@ -1,0 +1,201 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<title>可拖拽的路线规划</title>
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css" />
+	<script type="text/javascript"
+		src="http://webapi.amap.com/maps?v=1.4.2&key=a26271caa073b05146f4d1b2015a2d2f&plugin=AMap.LineSearch"></script>
+	<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+	<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+</head>
+<style>
+	.marker {
+		color: #ff6600;
+		padding: 4px 10px;
+		border: 1px solid #fff;
+		white-space: nowrap;
+		font-size: 12px;
+		font-family: "";
+		background-color: #0066ff;
+	}
+
+	.page {
+		position: absolute;
+		top: 0px;
+		z-index: 99;
+		right: 10px;
+	}
+
+	a {
+		color: blue;
+		font-size: larger;
+		font-weight: 700;
+
+	}
+</style>
+
+<body>
+	<div class="page"><a href="../index.html">返回上一页</a></div>
+	<div id="container"></div>
+	<div class="button-group">
+		<input type="button" class="button" value="添加公交车线路" id="addBusLine" />
+		<input type="button" class="button" value="删除公交车线路" onclick="destroyBusLine()" />
+		<input type="button" class="button" value="添加点标记覆盖物" id="addMarker" />
+		<input type="button" class="button" value="删除点标记覆盖物" id="clearMarker" />
+		<input type="button" class="button" value="保存线路与站点信息" onclick="ache()" />
+
+	</div>
+	<!--<div id="tip" onclick="ache();">请拖拽路径试试</div>-->
+	<script type="text/javascript">
+		var infoWindow = new AMap.InfoWindow({ offset: new AMap.Pixel(0, -30) });//点击点标弹出站名
+		var siteNumbe = [];//放点的位置信息
+		var markers = [];//存放所有的打点信息
+		var operateStatu = 0;
+		var map, route, marker;
+		//基本地图加载
+		map = new AMap.Map("container", {
+			resizeEnable: true,
+			zoom: 5
+		});
+		var patha = [];
+		var pathb = [];
+
+		//为地图注册click事件获取鼠标点击出的经纬度坐标
+
+		var clickEventListener = map.on('click', function (e) {
+
+			if (operateStatu == 1) {
+				var ln = e.lnglat.getLng();
+				var la = e.lnglat.getLat();
+				patha.push(ln);
+				pathb.push(la);
+				var path = []
+				var lengths = patha.length;
+				if (lengths > 1) {
+
+					path.push([patha[0], pathb[0]]);
+					if (route) {
+						var dian = route.getWays();
+						console.info(dian);
+						if (dian) {
+							$.each(dian, function (i, field) {
+								path.push([dian[i].lng, dian[i].lat]);
+							});
+						}
+
+
+					}
+					path.push([ln, la]);
+					//$.each(patha,function(i,field){
+					//path.push([patha[i],pathb[i]]);		
+					//});
+
+					ache(path)
+				} else {
+
+					var singpath = [];
+					singpath.push([ln, la]);
+					singpath.push([ln, la - 0.00001]);
+					ache(singpath);
+				}
+
+			};
+
+
+
+
+
+		});
+
+		function ache(path) {
+			//每次画新线路将之前的线路清除
+			if (route) { route.destroy(); }
+			map.plugin("AMap.DragRoute", function () {
+				route = new AMap.DragRoute(map, path, AMap.DrivingPolicy.LEAST_FEE); //构造拖拽导航类
+
+				route.search(); //查询导航路径并开启拖拽导航 
+				route.on('complete', function (type, target, data) {
+					//console.info(type);
+					//alert(type+":"+data+";;"+target);
+				});
+			});
+		}
+
+		//添加公交车线路
+		AMap.event.addDomListener(document.getElementById('addBusLine'), 'click', function () {
+			operateStatu = 1;
+		}, false);
+		//删除公交线路
+		function destroyBusLine() {
+			if (operateStatu == 1) {
+				patha = [];
+				pathb = [];
+				//path=[];
+				route.destroy();
+				route = "";
+			}
+		}
+		//添加点标记覆盖物
+		AMap.event.addDomListener(document.getElementById('addMarker'), 'click', function (e) {
+			operateStatu = 2;
+			console.info("abc");
+		}, false);
+		var clickEventListener = map.on('click', function (ed) {
+			if (operateStatu == 2) {
+
+				addMarker([ed.lnglat.getLng(), ed.lnglat.getLat()]);
+			};
+
+		});
+		//删除点标记覆盖物
+		AMap.event.addDomListener(document.getElementById('clearMarker'), 'click', function () {
+			if (operateStatu == 2) {
+				if (siteNumbe.length > 0) {
+					$.each(siteNumbe, function (i, field) {
+						markers[field].setMap(null);//删除站名相同的
+						marker = null;
+					})
+				}
+			};
+
+		}, false);
+
+
+		// 实例化点标记
+		function addMarker(abc) {
+			var person = prompt("请输入该站点名称(设置后不可修改)", "北京站");
+			if (person != null && person != "") {
+				marker = new AMap.Marker({
+					icon: "aa.png",
+					draggable: true,  //是否可拖动
+					position: abc
+				});
+				marker.setMap(map);
+				marker.content = person;//站名
+				marker.on('click', markerClick);
+				marker.emit('click', { target: marker });
+				markers.push(marker);
+			}
+		}
+		//点击点标弹出站名	
+		function markerClick(e) {
+			var site = e.target.content;
+
+			$.each(markers, function (i, field) {
+				if (site == field.content) {
+					siteNumbe.push(i);//判断站名是否相同，将相同的记录
+				}
+			})
+
+			infoWindow.setContent(e.target.content);
+			infoWindow.open(map, e.target.getPosition());
+		}	
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,1404 @@
+﻿<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>数据总览</title>
+	<link rel="stylesheet" href="../FirstPage/base.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script type="text/javascript" src="js/js.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<link rel="stylesheet" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/app.css">
+	<script type="text/javascript" src="js/echarts-wordcloud.min.js"></script>
+	<script type="text/javascript" src="js/echarts-map-china.js"></script>
+	<script src="js/jquery-1.4.4.min.js"></script>
+	<link rel="stylesheet" href="css/table.css">
+	<script type="text/javascript" src="js/jq_scroll.js"></script>
+</head>
+
+<body>
+	<!--导航-->
+	<header class="header left">
+		<div class="left nav">
+			<ul>
+				<li><i class="nav_1"></i><a href="../FirstPage/first.html">首页界面</a> </li>
+				<li><i class="nav_2"></i><a href="../DataScreen/index.html">数据总览</a> </li>
+			</ul>
+		</div>
+		<div class="header_center left">
+			<h2><strong>后疫情时代——旅游经济发展分析平台</strong></h2>
+			<p class="color_font"><small>Comprehensive service platform for smart tourism</small></p>
+		</div>
+		<div class="right nav text_right">
+			<ul>
+				<li class="nav_active"><i class="nav_8"></i><a href="../TravelResource/index.html">旅游资源</a> </li>
+				<li><i class="nav_4"></i><a href="../DataPreview/index.html">数据预测</a> </li>
+			</ul>
+		</div>
+	</header>
+	<!---结束-->
+	<div class="mainbox">
+
+		<ul class="clearfix nav1">
+
+			<li style="width: 100%;height: 100%; padding-top: 15px;">
+				<div class="swiper-container gallery-thumbs " style="padding-left: 330px;">
+
+					<div class="swiper-wrapper">
+						<div class="swiper-slide ">景区分布</div>
+						<div class="swiper-slide">综合旅游资源</div>
+						<div class="swiper-slide">热点词云</div>
+						<div class="swiper-slide">六大菜系</div>
+
+
+					</div>
+
+				</div>
+
+				<div class="box">
+					<div class="boxnav mapc" style="height: 800px; position: relative; padding: 0">
+
+
+						<div class="swiper-container gallery-top">
+
+							<div class="swiper-wrapper">
+
+
+								<div class="swiper-slide">
+									<div id="map" style="height: 100%; width: 65%;float: left;">
+									</div>
+									<div style="position:absolute; top:590px;left: 320px;">
+										<a href="jquerygdmap/index.html"
+											style="display: block; height: 40px; width: 120px;background-color: rgb(79, 170, 245);line-height: 40px;text-align: center;border-radius: 10%;">进入路线规划</a>
+									</div>
+									<div class="map_table">
+
+										<div class="scrollbox">
+											<div id="scrollDiv">
+												<ul>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/136" class="linktit"
+																target="_blank">鼓浪屿</a></h3>
+														<div>厦门市思明区鼓浪屿 </div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/126" class="linktit"
+																target="_blank">甘肃省博物馆</a></h3>
+														<div>兰州市七里河区西津西路3号 </div>
+													</li>
+
+													<li>
+														<h3><a href="https://720yuntu.com/tour/8ed12176caaac15f"
+																class="linktit" target="_blank">漓江风景名胜区</a></h3>
+														<div>桂林市灵川县
+														</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/1349"
+																class="linktit" target="_blank">青岩古镇</a></h3>
+														<div>贵阳市花溪区青岩镇 </div>
+													</li>
+													<li>
+														<h3><a href="https://www.720yun.com/t/96bjvOmytn0?scene_id=20696522"
+																class="linktit" target="_blank">三亚亚特兰蒂斯度假区</a></h3>
+														<div>三亚市海棠湾海棠北路三亚亚特兰蒂斯</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/dest/pano_17063.html"
+																class="linktit" target="_blank">北戴河</a></h3>
+														<div>秦皇岛市北戴河区东部沿海区域</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/1265"
+																class="linktit" target="_blank">少林寺</a></h3>
+														<div>河南省登封市中岳嵩山西麓 </div>
+													</li>
+													<li>
+														<h3><a href="https://www.720yun.com/t/f3vku979zfl?scene_id=38660112"
+																class="linktit" target="_blank">哈尔滨冰雪大世界</a></h3>
+														<div>哈尔滨市松北区太阳岛西区冰雪大世界园区</div>
+													</li>
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/099e3ad535dd9e21"
+																class="linktit" target="_blank">黄鹤楼</a></h3>
+														<div>武汉市武昌区蛇山西山坡特1号</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/257" class="linktit"
+																target="_blank">橘子洲</a></h3>
+														<div>长沙市岳麓区橘子洲头2号 </div>
+													</li>
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/483045980d757c96"
+																class="linktit">长影世纪城</a></h3>
+														<div>长春市净月国家高新技术产业开发区净月大街与永顺路交汇处</div>
+													</li>
+													<li>
+														<h3><a href="http://wyhl.cc/dmhl/hlgs.html"
+																class="linktit">婺源篁岭</a></h3>
+														<div>上饶市婺源县江湾镇篁岭村 </div>
+													</li>
+													<li>
+														<h3><a href="https://www.720yun.com/t/cavknbq70dq?scene_id=32554391"
+																class="linktit">老虎滩海洋公园</a></h3>
+														<div>大连市中山区滨海中路9号</div>
+													</li>
+
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/15a54f96a0501fc9"
+																class="linktit" target="_blank">镇北堡西部影城</a></h3>
+														<div>宁夏回族自治区银川市镇北堡 </div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/470" class="linktit"
+																target="_blank">塔尔寺</a></h3>
+														<div>西宁市金塔路56号 </div>
+													</li>
+													<li>
+														<h3><a href="https://901354533.sh1011.com/index.php?g=Webapp&m=Index&a=page&pkey=867048742&vkey=901354533"
+																class="linktit" target="_blank">崂山</a></h3>
+														<div>青岛市崂山区崂山风景区</div>
+													</li>
+													<li>
+														<h3><a href="https://tech.chinajinci.com/pano/?scene_id=50963180"
+																class="linktit" target="_blank">晋祠博物馆</a></h3>
+														<div>山西省太原市晋源区晋祠公园内</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/1249"
+																class="linktit" target="_blank">秦始皇帝陵博物院(兵马俑)</a></h3>
+														<div>陕西省西安市临潼区秦陵北路与秦俑馆公路交叉口</div>
+													</li>
+													<li>
+														<h3><a href="https://www.720yun.com/t/19vksmflrfe?scene_id=49102111"
+																class="linktit" target="_blank">上海迪士尼度假区</a></h3>
+														<div>上海市浦东新区川沙新镇黄赵路310号</div>
+													</li>
+													<li>
+														<h3><a href="https://www.720yun.com/t/90vkc7d97ie?scene_id=64914917"
+																class="linktit" target="_blank">成都大熊猫培育基地</a></h3>
+														<div>四川省成都市成华区熊猫大道1375号</div>
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/7778b28feaf22c46"
+																class="linktit" target="_blank">台北故宫博物院</a></h3>
+														<div>台北市士林区至善路二段221号</div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/740" class="linktit"
+																target="_blank">布达拉宫</a></h3>
+														<div>拉萨市城关区北京中路35号</div>
+													</li>
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/9635dcab40bb7e71"
+																class="linktit" target="_blank">香港迪士尼乐园</a></h3>
+														<div>香港大屿山香港迪士尼乐园度假区 </div>
+													</li>
+													<li>
+														<h3><a href="http://www.quanjingke.com/jq/m/607" class="linktit"
+																target="_blank">玉龙雪山</a></h3>
+														<div>丽江市玉龙县丽江古城以北15公里处（玉龙雪山风景区） </div>
+													</li>
+													<li>
+														<h3><a href="https://www.vrqjcs.com/p/fb1214df94ca8adc"
+																class="linktit" target="_blank">灵隐寺</a></h3>
+														<div>杭州市西湖区灵隐路法云弄1号</div>
+													</li>
+
+			</li>
+		</ul>
+	</div>
+	<div class="scroltit"><span id="but_up">↑</span><span id="but_down">↓</span>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			$("#scrollDiv").Scroll({ line: 1, speed: 500, timer: 2000, up: "but_up", down: "but_down" });
+		});
+	</script>
+
+	</div>
+	</div>
+
+	<div class="swiper-slide">
+		<div class="chart1" id="echart1"></div>
+
+	</div>
+
+
+	<div class="swiper-slide" id="wordChart"></div>
+	<div class="swiper-slide">
+		<div class="leftdiv">
+			<div id="echart21" class="leftdivs">
+			</div>
+			<div id="echart3" class="leftdivs">
+			</div>
+		</div>
+		<div class="rightdiv">
+			<div class="tit">热门餐饮（点赞人数）</div>
+			<div class="boxnav">
+				<ul class="gnlb">
+					<li><span>川渝火锅（川）：<em>345435</em></span></li>
+					<li><span>回锅肉（川）：<em>2335253</em></span></li>
+					<li><span>麻婆豆腐（川）：<em>11439351</em></span></li>
+					<li><span>九转大肠（鲁）：<em>31219351</em></span></li>
+					<li><span>糖醋黄河鲤鱼（鲁）：<em>115651</em></span></li>
+					<li><span>油焖大虾（鲁）：<em>2316351</em></span></li>
+					<li><span>脆皮烧鹅（粤）：<em>271151</em></span></li>
+					<li><span>白切鸡（粤）：<em>1147851</em></span></li>
+					<li><span>烧乳猪（粤）：<em>732351</em></span></li>
+					<li><span>佛跳墙（闽）：<em>2529351</em></span></li>
+					<li><span>排骨莲藕（闽）：<em>803541</em></span></li>
+					<li><span>荔枝肉（闽）：<em>125751</em></span></li>
+					<li><span>松鼠桂鱼（苏）：<em>119351</em></span></li>
+					<li><span>大煮干丝（苏）：<em>125642</em></span></li>
+					<li><span>叫花鸡（苏）：<em>3142251</em></span></li>
+					<li><span>东坡肉（浙）：<em>2341351</em></span></li>
+					<li><span>西湖醋鱼（浙）：<em>124151</em></span></li>
+					<li><span>宋嫂鱼羹（浙）：<em>111512</em></span></li>
+				</ul>
+			</div>
+		</div>
+
+
+
+	</div>
+
+
+	</div>
+
+	<!-- Add Arrows -->
+
+	<div class="swiper-button-next swiper-button-white"></div>
+
+	<div class="swiper-button-prev swiper-button-white"></div>
+
+	</div>
+
+
+	<script>
+		var galleryThumbs = new Swiper('.gallery-thumbs', {
+			spaceBetween: 0,
+			slidesPerView: 5,
+			freeMode: true,
+			watchSlidesVisibility: true,
+			watchSlidesProgress: true,
+		});
+		var galleryTop = new Swiper('.gallery-top', {
+			spaceBetween: 10,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+			thumbs: {
+				swiper: galleryThumbs
+			}
+		});
+	</script>
+	</div>
+	</div>
+
+	</li>
+
+	</ul>
+
+
+
+
+	</div>
+
+
+
+	<script>
+
+
+		const wordChart = echarts.init(document.getElementById("wordChart"));
+		const wordOpt = {
+
+			tooltip: {
+				show: true
+			},
+			series: [{
+				type: 'wordCloud',
+				shape: 'circle ', //circle cardioid diamond  triangle-forward triangle
+				left: 0,
+				right: 0,
+				top: 30,
+				right: 0,
+				width: '100%',
+				height: '100%',
+				gridSize: 15, //值越大，word间的距离越大，单位像素
+				sizeRange: [20, 120], //word的字体大小区间，单位像素
+				rotationRange: [-90, 90], //word的可旋转角度区间
+				textStyle: {
+
+					normal: {
+						color: function () {
+							return 'rgb(' + [
+								Math.round(Math.random() * 255),
+								Math.round(Math.random() * 255),
+								Math.round(Math.random() * 255)
+							].join(',') + ')';
+						},
+						textBorderColor: 'white',
+						textBorderWidth: 1
+
+					},
+					emphasis: {
+						shadowBlur: 4,
+						shadowColor: '#000'
+					},
+
+				},
+				data: [{
+					name: '旅游管理体制',
+					value: 300,
+					textStyle: {
+						normal: { color: '#f52f55' },
+						emphasis: {}
+					}
+				}, {
+					name: '全域旅游',
+					value: 218
+				}, {
+					name: '门票减免',
+					value: 1386
+				}, {
+					name: '旅游企业',
+					value: 2055
+				}, {
+					name: '乡村旅游',
+					value: 246
+				}, {
+					name: '民宿旅游',
+					value: 224
+				}, {
+					name: '旅游执法',
+					value: 189
+				}, {
+					name: '强迫购物',
+					value: 148
+				}, {
+					name: ' 周边游 ',
+					value: 3865
+				}, {
+					name: '红色旅游 ',
+					value: 897
+				}, {
+					name: '机票盲盒	',
+					value: 847
+				}, {
+					name: ' 大西北 ',
+					value: 1366
+				}, {
+					name: '北京环球度假区开园',
+					value: 555
+				}, {
+					name: '电竞酒店',
+					value: 550
+				}, {
+					name: '囤旅游  "中"',
+					value: 2222
+				}, {
+					name: '古镇园林',
+					value: 366
+				}, {
+					name: '乡村民宿',
+					value: 360
+				}, {
+					name: '户外露营',
+					value: 282
+				}, {
+					name: '江河夜游',
+					value: 273
+				}, {
+					name: '动植物园成为今年端午小长假五大旅行关键词',
+					value: 265
+				},
+				{
+					name: '复苏',
+					value: 1265
+				},
+				{
+					name: '恢复程度',
+					value: 265
+				},
+				{
+					name: '文明旅游红榜',
+					value: 265
+				},
+				{
+					name: '‘五一’出境游',
+					value: 5500
+				}, {
+					name: '互联网+',
+					value: 2222
+				}, {
+					name: '智能合约',
+					value: 366
+				}, {
+					name: '比特币',
+					value: 360
+				}, {
+					name: '淄博烧烤',
+					value: 100
+				}, {
+					name: '泰山免门票',
+					value: 1212
+				}, {
+					name: '公交车免费',
+					value: 265
+				},
+				{
+					name: '海和洱海',
+					value: 265
+				},
+				{
+					name: '花与“花花”',
+					value: 265
+				},
+				{
+					name: '大学生军训式旅游',
+					value: 3000
+				},
+				{
+					name: '寺庙旅行',
+					value: 1256
+				}, {
+					name: ' 带娃露营 ',
+					value: 806
+				}, {
+					name: '游乐场',
+					value: 2931
+				}, {
+					name: '露营攻略',
+					value: 1984
+				}, {
+					name: '囤旅游  "中"',
+					value: 2222
+				}, {
+					name: '五大道海棠',
+					value: 484
+				}, {
+					name: '亲子游去哪',
+					value: 412
+				}, {
+					name: '游乐园',
+					value: 4617
+				}, {
+					name: '韩国樱花',
+					value: 388
+				}, {
+					name: '天津旅游',
+					value: 982
+				},
+				{
+					name: '逛北京',
+					value: 181
+				},
+				{
+					name: '亲子游',
+					value: 6606
+				},
+				{
+					name: '春日集市',
+					value: 454
+				},
+				{
+					name: '户外野餐',
+					value: 691
+				}, {
+					name: '酒店旅游',
+					value: 873
+				}, {
+					name: '帐篷露营',
+					value: 1028
+				}, {
+					name: '虞美人花海',
+					value: 375
+				}, {
+					name: '海信广场',
+					value: 400
+				}, {
+					name: '朗园Vintage',
+					value: 204
+				}, {
+					name: '五一小长假',
+					value: 358
+				},
+				{
+					name: '图书市集',
+					value: 451
+				},
+				{
+					name: '逛北京',
+					value: 181
+				},
+				{
+					name: '上海共青森林公园',
+					value: 865
+				}
+
+				],
+
+			}],
+			//backgroundColor: 'rgba(255, 255, 255, 0.5)'
+		};
+		wordChart.setOption(wordOpt);
+		//地图
+		var myChart = echarts.init(document.getElementById('map'));
+		// echarts.registerMap('China', { geoJson: ChinaJson });
+		// echarts.registerMap('ShanDong', { geoJson: ShanDongJson });
+		var option = {
+
+			title: {
+				show: true,
+				text: '景区分布',
+				textStyle: {
+
+					fontSize: 25,
+					color: '#fff'
+
+				}
+
+			},
+
+			tooltip: { //鼠标hover是提示信息
+				show: true, //不显示提示标签
+				formatter: '{b}<br/>{c} 个景区', //提示标签格式
+				//backgroundColor: "#ff7f50", //提示标签背景颜色
+				textStyle: {
+					color: "white",
+					fontSize: "20"
+				} //提示标签字体颜色
+			},
+			visualMap: {
+				show: true,
+
+				left: 100,
+				top: 500,
+
+				type: 'piecewise',
+				pieces: [
+					{ min: 200 },
+					{ min: 151, max: 190 },
+					{ min: 50, max: 150 },
+					{
+						min: 200,
+						max: 450,
+						label: '200 - 300 (Custom Color)',
+						color: 'lightgreen'
+					},
+					{ min: 10, max: 50, label: '10 to 20 景区' }
+				],
+				outOfRange: {
+					color: '#eee'
+				},
+				textStyle: {
+
+					fontSize: 15,
+					color: '#fff'
+
+				}
+
+			},
+			series: [{
+				type: 'map',
+				color: "red",
+				mapType: 'china',
+				roam: "false", //是否开启缩放平移
+				label: { //标签字体样式
+					position: "inside",
+					normal: { //正常情况下显示效果
+						show: true, //显示省份标签
+						textStyle: {
+							color: "#fff",
+							fontSize: 15
+						} //省份标签字体颜色
+					},
+					emphasis: { //对应的鼠标悬浮效果
+						show: true,
+						textStyle: {
+							color: "#800080"
+						}
+					}
+				},
+				// itemStyle: {
+				//     ShadowColor: 'rgba(12,0,0,0.5)',
+				//     ShadowBlur: 10,
+				//     ShadowOffsetY: 5,
+				//     ShadowOffsetX: 5,
+				//     normal: {
+				//         borderWidth: 1, //区域边框宽度
+				//         borderColor: '#fff', //区域边框颜色
+				//         //areaColor: "#ffefd5", //区域颜色
+				//         fontSize: "30"
+				//     },
+				//     emphasis: {
+				//         borderWidth: 1,
+				//         borderColor: '#3246FB',
+				//         areaColor: "#06306d",
+				//     },
+				itemStyle: {
+					normal: {
+						borderColor: "rgba(255, 255, 255, 0.5)",//地图边框描边颜色
+						borderWidth: 1,
+						areaColor: {
+							type: "radial",
+							x: 0.5,
+							y: 0.5,
+							r: 0.8,
+							// colorStops: [
+							// 	{
+							// 		offset: 0,
+							// 		color: "rgba(147, 235, 248, 0)", // 0% 处的颜色
+							// 	},
+							// 	{
+							// 		offset: 1,
+							// 		color: "rgba(147, 235, 248, .2)", // 100% 处的颜色
+							// 	},
+							// ],
+							globalCoord: false, // 缺省为 false
+						},
+						shadowColor: "rgba(128, 128, 128, 1)",
+						shadowOffsetX: -5,
+						shadowOffsetY: 5,
+						shadowBlur: 10,
+					},
+					// 鼠标放上去高亮的样式
+					emphasis: {
+						// areaColor: "#389BB7", //鼠标放上去地图区域的颜色
+						// borderWidth: 0,
+						// borderWidth: 1,
+						// borderColor: '#3246FB',
+						areaColor: "#06306d",
+					},
+				},
+
+				data: [{
+					name: '北京',
+					value: 312
+				}, {
+					name: '天津',
+					value: 72
+				}, {
+					name: '上海',
+					value: 209
+				}, {
+					name: '重庆',
+					value: 131
+				}, {
+					name: '河北',
+					value: 190
+				}, {
+					name: '河南',
+					value: 111
+				}, {
+					name: '云南',
+					value: 119
+				}, {
+					name: '辽宁',
+					value: 78
+				}, {
+					name: '黑龙江',
+					value: 36
+				}, {
+					name: '湖南',
+					value: 179
+				}, {
+					name: '安徽',
+					value: 147
+				}, {
+					name: '山东',
+					value: 221
+				}, {
+					name: '新疆',
+					value: 42
+				}, {
+					name: '江苏',
+					value: 104
+				}, {
+					name: '浙江',
+					value: 313
+				}, {
+					name: '江西',
+					value: 88
+				}, {
+					name: '湖北',
+					value: 73
+				}, {
+					name: '广西',
+					value: 103
+				}, {
+					name: '甘肃',
+					value: 43
+				}, {
+					name: '山西',
+					value: 103
+				}, {
+					name: '内蒙古',
+					value: 298
+				}, {
+					name: '陕西',
+					value: 119
+				}, {
+					name: '吉林',
+					value: 66
+				}, {
+					name: '福建',
+					value: 235
+				}, {
+					name: '贵州',
+					value: 15
+				}, {
+					name: '广东',
+					value: 446
+				}, {
+					name: '青海',
+					value: 35
+				}, {
+					name: '西藏',
+					value: 52
+				}, {
+					name: '四川',
+					value: 291
+				}, {
+					name: '宁夏',
+					value: 72
+				}, {
+					name: '海南',
+					value: 49
+				}, {
+					name: '台湾',
+					value: 88
+				}, {
+					name: '香港',
+					value: Math.round(Math.random() * 100)
+				}, {
+					name: '澳门',
+					value: Math.round(Math.random() * 100)
+				}]
+			}],
+		};
+		myChart.setOption(option);
+		myChart.on('click', function (params) {
+			window.open('province/' + params.name + '/' + params.name + '.html', '_self');
+
+		});
+
+
+		//第二个
+		const relationChart2 = echarts.init(document.getElementById("relationChart2"));
+		const relationOpt2 = {
+			animationDurationUpdate: 1500,
+			animationEasingUpdate: 'quinticInOut',
+			label: {
+				normal: {
+					show: true,
+					textStyle: {
+						fontSize: 12
+					}
+				}
+			},
+			series: [{
+				type: 'graph',
+				symbolSize: 45,
+				focusNodeAdjacency: true,
+				roam: true,
+				layout: 'force',
+				force: {
+					repulsion: 320 //斥力因子，值越大，斥力越大
+				},
+				label: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 12
+						},
+					}
+				},
+				edgeSymbolSize: [4, 50],
+				edgeLabel: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 10
+						},
+						formatter: "{c}"
+					}
+				},
+				categories: [{
+					name: '景区',
+					itemStyle: {
+						normal: {
+							color: '#f2637b'
+						}
+					}
+				}, {
+					name: '前端',
+					itemStyle: {
+						normal: {
+							color: "#eaa674",
+						}
+					}
+				}, {
+					name: '移动端',
+					itemStyle: {
+						normal: {
+							color: "#3aa1ff",
+						}
+					}
+				}, {
+					name: '服务端',
+					itemStyle: {
+						normal: {
+							color: "#4ecb73",
+						}
+					}
+				}],
+				data: [{
+					name: '景区',
+					category: 0,
+					draggable: true
+				}, {
+					name: '前端',
+					category: 1,
+					draggable: true
+				}, {
+					name: '移动端',
+					category: 2,
+					draggable: true
+				}, {
+					name: '服务端',
+					category: 3,
+					draggable: true
+				}, {
+					name: 'HTML',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'CSS',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'JavaScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'TypeScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'Java',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'PHP',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Python',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Andriod',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Object-C',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Swift',
+					category: 2,
+					draggable: true,
+				}],
+				links: [{
+					source: 0,
+					target: 1,
+					value: ''
+				}, {
+					source: 0,
+					target: 2,
+					value: ''
+				}, {
+					source: 0,
+					target: 3,
+					value: ''
+				}, {
+					source: 1,
+					target: 4,
+					value: ''
+				}, {
+					source: 1,
+					target: 5,
+					value: ''
+				}, {
+					source: 1,
+					target: 6,
+					value: ''
+				}, {
+					source: 1,
+					target: 7,
+					value: ''
+				}, {
+					source: 6,
+					target: 7,
+					value: '超集'
+				}, {
+					source: 3,
+					target: 8,
+					value: ''
+				}, {
+					source: 3,
+					target: 9,
+					value: ''
+				}, {
+					source: 3,
+					target: 10,
+					value: ''
+				}, {
+					source: 9,
+					target: 10,
+					value: '脚本'
+				}, {
+					source: 2,
+					target: 11,
+					value: ''
+				}, {
+					source: 2,
+					target: 12,
+					value: ''
+				}, {
+					source: 2,
+					target: 13,
+					value: ''
+				}, {
+					source: 12,
+					target: 13,
+					value: 'iOS'
+				}],
+				lineStyle: {
+					normal: {
+						opacity: 0.9,
+						width: 1,
+						curveness: 0
+					}
+				}
+			}]
+		};
+		relationChart2.setOption(relationOpt2);
+		//第三个
+		const relationChart3 = echarts.init(document.getElementById("relationChart3"));
+		const relationOpt3 = {
+			animationDurationUpdate: 1500,
+			animationEasingUpdate: 'quinticInOut',
+			label: {
+				normal: {
+					show: true,
+					textStyle: {
+						fontSize: 12
+					}
+				}
+			},
+			series: [{
+				type: 'graph',
+				symbolSize: 45,
+				focusNodeAdjacency: true,
+				roam: true,
+				layout: 'force',
+				force: {
+					repulsion: 320 //斥力因子，值越大，斥力越大
+				},
+				label: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 12
+						},
+					}
+				},
+				edgeSymbolSize: [4, 50],
+				edgeLabel: {
+					normal: {
+						// show: true,
+						textStyle: {
+							fontSize: 10
+						},
+						formatter: "{c}"
+					}
+				},
+				categories: [{
+					name: '景区',
+					itemStyle: {
+						normal: {
+							color: '#f2637b'
+						}
+					}
+				}, {
+					name: '前端',
+					itemStyle: {
+						normal: {
+							color: "#eaa674",
+						}
+					}
+				}, {
+					name: '移动端',
+					itemStyle: {
+						normal: {
+							color: "#3aa1ff",
+						}
+					}
+				}, {
+					name: '服务端',
+					itemStyle: {
+						normal: {
+							color: "#4ecb73",
+						}
+					}
+				}],
+				data: [{
+					name: '景区',
+					category: 0,
+					draggable: true
+				}, {
+					name: '1',
+					category: 1,
+					draggable: true
+				}, {
+					name: '移动端',
+					category: 2,
+					draggable: true
+				}, {
+					name: '服务端',
+					category: 3,
+					draggable: true
+				}, {
+					name: 'HTML',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'CSS',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'JavaScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'TypeScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'Java',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'PHP',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Python',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Andriod',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Object-C',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Swift',
+					category: 2,
+					draggable: true,
+				}],
+				links: [{
+					source: 0,
+					target: 1,
+					value: ''
+				}, {
+					source: 0,
+					target: 2,
+					value: ''
+				}, {
+					source: 0,
+					target: 3,
+					value: ''
+				}, {
+					source: 1,
+					target: 4,
+					value: ''
+				}, {
+					source: 1,
+					target: 5,
+					value: ''
+				}, {
+					source: 1,
+					target: 6,
+					value: ''
+				}, {
+					source: 1,
+					target: 7,
+					value: ''
+				}, {
+					source: 6,
+					target: 7,
+					value: '超集'
+				}, {
+					source: 3,
+					target: 8,
+					value: ''
+				}, {
+					source: 3,
+					target: 9,
+					value: ''
+				}, {
+					source: 3,
+					target: 10,
+					value: ''
+				}, {
+					source: 9,
+					target: 10,
+					value: '脚本'
+				}, {
+					source: 2,
+					target: 11,
+					value: ''
+				}, {
+					source: 2,
+					target: 12,
+					value: ''
+				}, {
+					source: 2,
+					target: 13,
+					value: ''
+				}, {
+					source: 12,
+					target: 13,
+					value: 'iOS'
+				}],
+				lineStyle: {
+					normal: {
+						opacity: 0.9,
+						width: 1,
+						curveness: 0
+					}
+				}
+			}]
+		};
+		relationChart3.setOption(relationOpt3);
+
+		const relationChart = echarts.init(document.getElementById("relationChart"));
+		const relationOpt = {
+			animationDurationUpdate: 1500,
+			animationEasingUpdate: 'quinticInOut',
+			label: {
+				normal: {
+					show: true,
+					textStyle: {
+						fontSize: 12
+					}
+				}
+			},
+			series: [{
+				type: 'graph',
+				symbolSize: 45,
+				focusNodeAdjacency: true,
+				roam: true,
+				layout: 'force',
+				force: {
+					repulsion: 320 //斥力因子，值越大，斥力越大
+				},
+				label: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 12
+						},
+					}
+				},
+				edgeSymbolSize: [4, 50],
+				edgeLabel: {
+					normal: {
+						show: true,
+						textStyle: {
+							fontSize: 10
+						},
+						formatter: "{c}"
+					}
+				},
+				categories: [{
+					name: '12',
+					itemStyle: {
+						normal: {
+							color: '#f2637b'
+						}
+					}
+				}, {
+					name: '前端',
+					itemStyle: {
+						normal: {
+							color: "#eaa674",
+						}
+					}
+				}, {
+					name: '移动端',
+					itemStyle: {
+						normal: {
+							color: "#3aa1ff",
+						}
+					}
+				}, {
+					name: '服务端',
+					itemStyle: {
+						normal: {
+							color: "#4ecb73",
+						}
+					}
+				}],
+				data: [{
+					name: '12',
+					category: 0,
+					draggable: true
+				}, {
+					name: '前端',
+					category: 1,
+					draggable: true
+				}, {
+					name: '移动端',
+					category: 2,
+					draggable: true
+				}, {
+					name: '服务端',
+					category: 3,
+					draggable: true
+				}, {
+					name: 'HTML',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'CSS',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'JavaScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'TypeScript',
+					category: 1,
+					draggable: true,
+				}, {
+					name: 'Java',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'PHP',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Python',
+					category: 3,
+					draggable: true,
+				}, {
+					name: 'Andriod',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Object-C',
+					category: 2,
+					draggable: true,
+				}, {
+					name: 'Swift',
+					category: 2,
+					draggable: true,
+				}],
+				links: [{
+					source: 0,
+					target: 1,
+					value: ''
+				}, {
+					source: 0,
+					target: 2,
+					value: ''
+				}, {
+					source: 0,
+					target: 3,
+					value: ''
+				}, {
+					source: 1,
+					target: 4,
+					value: ''
+				}, {
+					source: 1,
+					target: 5,
+					value: ''
+				}, {
+					source: 1,
+					target: 6,
+					value: ''
+				}, {
+					source: 1,
+					target: 7,
+					value: ''
+				}, {
+					source: 6,
+					target: 7,
+					value: '超集'
+				}, {
+					source: 3,
+					target: 8,
+					value: ''
+				}, {
+					source: 3,
+					target: 9,
+					value: ''
+				}, {
+					source: 3,
+					target: 10,
+					value: ''
+				}, {
+					source: 9,
+					target: 10,
+					value: '脚本'
+				}, {
+					source: 2,
+					target: 11,
+					value: ''
+				}, {
+					source: 2,
+					target: 12,
+					value: ''
+				}, {
+					source: 2,
+					target: 13,
+					value: ''
+				}, {
+					source: 12,
+					target: 13,
+					value: 'iOS'
+				}],
+				lineStyle: {
+					normal: {
+						opacity: 0.9,
+						width: 1,
+						curveness: 0
+					}
+				}
+			}]
+		};
+		relationChart.setOption(relationOpt);
+
+
+	</script>
+
+
+
+</body>
+
+</html>

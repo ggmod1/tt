@@ -1,0 +1,130 @@
+body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: #051655;
+    font-family: 微软雅黑, MicrosoftYahei, sans-serif;
+    color: #fff;
+    background-image: url(../../first/img/loginBg.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+
+
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+pre,
+table,
+blockquote,
+input,
+button,
+select,
+em,
+textarea {
+    margin: 0;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-style: normal;
+}
+
+.mapbox {
+    height: 100%;
+    width: 55%;
+    float: left;
+}
+
+.max {
+    height: 90%;
+    width: 100%;
+}
+
+.left {
+    height: 100%;
+    width: 20%;
+    float: left;
+}
+
+.right {
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+
+#map {
+    height: 100%;
+
+
+
+}
+
+.mapborder {
+    height: 70%;
+    margin-top: 15px;
+    border: 1px solid rgba(7, 118, 181, .7);
+    box-shadow: inset 0 0 15px rgba(7, 118, 181, .8);
+    position: relative;
+    padding: 15px;
+
+}
+
+.header {
+    height: 8%;
+    width: 150%;
+    padding-left: 30px;
+}
+
+.mapbox_bottom {
+    margin: 15px 0;
+
+    width: 100%;
+    height: 20%;
+}
+
+.header {}
+
+.leftdiv1 {
+    margin: 15px;
+    height: 40%;
+
+}
+
+.leftdiv2 {
+    margin: 15px;
+    height: 53%;
+
+}
+
+.rightdiv1 {
+    margin: 15px;
+    height: 40%;
+
+}
+
+.rightdiv2 {
+    margin: 15px;
+    height: 53%;
+
+}
+
+.divsbg {
+    background-image: url(../images/bbox2.png);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
